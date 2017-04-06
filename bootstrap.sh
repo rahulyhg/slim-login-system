@@ -125,19 +125,18 @@ mv composer.phar /usr/local/bin/composer
 # ServerName YOUR.IP.ADDRESS.HERE
 
 
-# setup hosts file
-
-VHOST=$(cat <<EOF
-<VirtualHost *:80>
-    DocumentRoot "/var/www/html/${PROJECTFOLDER}"
-    <Directory "/var/www/html/${PROJECTFOLDER}">
-        AllowOverride All
-        Require all granted
-    </Directory>
-</VirtualHost>
-EOF
-)
-echo "${VHOST}" > /etc/apache2/sites-available/000-default.conf
+# setup hosts file - currently broke - ignore
+# VHOST=$(cat <<EOF
+# <VirtualHost *:80>
+#    DocumentRoot "/var/www/html/${PROJECTFOLDER}"
+#    <Directory "/var/www/html/${PROJECTFOLDER}">
+#        AllowOverride All
+#        Require all granted
+#    </Directory>
+# </VirtualHost>
+# EOF
+# )
+# echo "${VHOST}" > /etc/apache2/sites-available/000-default.conf
 
 
 
@@ -148,5 +147,7 @@ echo "${VHOST}" > /etc/apache2/sites-available/000-default.conf
 # composer require slim/slim "^3.0"
 # composer require slim/twig-view
 
-
+####################
+# view logs
+# tail -f /var/log/apache2/error.log
 

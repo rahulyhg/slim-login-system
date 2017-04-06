@@ -4,11 +4,6 @@ session_start();
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$user = new \App\models\user;
-
-var_dump($user);
-
-die();
 
 $app = new \Slim\App([
 
@@ -39,6 +34,12 @@ $container['view'] = function($container){
     ));
 
     return $view;
+
+};
+
+$container['HomeController'] = function($container){
+
+    return new \App\Controllers\HomeController($container);
 
 };
 
