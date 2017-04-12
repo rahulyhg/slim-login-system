@@ -8,6 +8,7 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
 use Slim\Views\Twig as View;
 
 class HomeController extends Controller
@@ -19,11 +20,10 @@ class HomeController extends Controller
         // you can find all the methods in the laravel docs for eloquent
         // things such as where clauses, etc
 
-        $user = $this->db->table('users')->find(1);
+        //$user = User::find(1);
+        //$user = User::where('email', 'mattmegabit@gmail.com')->first();
+        //var_dump($user->email);
 
-        var_dump($user);
-
-        die();
 
         return $this->container->view->render($response, 'home.twig');
 

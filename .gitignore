@@ -2,3 +2,5 @@ ubuntu-xenial-16.04-cloudimg-console.log
 .idea
 .vagrant/machines/default/virtualbox
 vm_build.log
+/vendor
+oldbootstrapfile.sh
