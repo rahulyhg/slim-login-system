@@ -30,7 +30,6 @@ $container['view'] = function($container){
         $container->router,
 
         $container->request->getUri()
-
     ));
 
     return $view;
