@@ -44,5 +44,12 @@ class Auth
         return false;
     }
 
+    public function logout(){
+
+        // todo session cookie still in browser after redirect - need to fix
+
+        unset($_SESSION['user']);
+
+    }
 
 }

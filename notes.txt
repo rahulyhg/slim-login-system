@@ -35,6 +35,7 @@ https://github.com/Respect/Validation
         slim/slim
         slim/twig-view
         slim/Slim-csrf
+        slim/flash
 
 
 
