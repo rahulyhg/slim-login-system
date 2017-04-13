@@ -87,6 +87,12 @@ $container['csrf'] = function($container){
 
 };
 
+$container['auth'] = function($container){
+
+    return new \App\Auth\Auth;
+
+};
+
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
 $app->add(new \App\Middleware\OldInputMiddleware($container));
