@@ -1,6 +1,19 @@
 notes
 
 --------------------------------------------------------------------------------------------------
+TODO add login and signup to navigation bar
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------
 database
 --------------------------------------------------------------------------------------------------
 # create users table - phpmyadmin
@@ -21,6 +34,7 @@ https://github.com/illuminate/database
 https://github.com/Respect/Validation
         slim/slim
         slim/twig-view
+        slim/Slim-csrf
 
 
 
@@ -48,13 +62,30 @@ autoload file
 }
 
 --------------------------------------------------------------------------------------------------
-
+how to add middleware
 --------------------------------------------------------------------------------------------------
+- examples -
+
+$container['csrf'] = function($container){
+
+    return new \Slim\Csrf\Guard;
+
+};
+
+$app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
+
+$app->add(new \App\Middleware\OldInputMiddleware($container));
+
+$app->add($container->csrf);
 
 
 
 
 
+
+
+this link explains things pretty well in the how to use section -
+https://github.com/slimphp/Slim-Csrf
 
 
 --------------------------------------------------------------------------------------------------

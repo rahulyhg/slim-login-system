@@ -13,6 +13,8 @@ class AuthController extends Controller
 
     public function getSignUp($request, $response){
 
+        var_dump($this->csrf->getTokenNameKey());
+
         return $this->view->render($response, 'auth/signup.twig');
 
     }
@@ -22,7 +24,9 @@ class AuthController extends Controller
         $validation = $this->validator->validate($request, $rules = [
 
             'email' => v::noWhitespace()->notEmpty()->email()->emailAvailable(),
+
             'name' => v::notEmpty()->alpha(),
+
             'password' => v::noWhitespace()->notEmpty(),
 
         ]);
@@ -36,7 +40,9 @@ class AuthController extends Controller
         $user = User::create([
 
             'email' => $request->getParam('email'),
+
             'name' => $request->getParam('name'),
+
             'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT),
 
         ]);
