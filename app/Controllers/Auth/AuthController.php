@@ -35,6 +35,8 @@ class AuthController extends Controller
 
         if(!$auth){
 
+            $this->flash->addMessage('error', 'Unable to sign in.');
+
             return $response->withRedirect($this->router->pathFor('auth.signin'));
 
         }
@@ -80,6 +82,7 @@ class AuthController extends Controller
 
         ]);
 
+        $this->flash->addMessage('info', 'Signup successful!');
 
         $this->auth->attempt($user->email, $request->getParam('password'));
 

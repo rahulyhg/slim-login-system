@@ -1,7 +1,7 @@
 notes
 
 --------------------------------------------------------------------------------------------------
-TODO add login and signup to navigation bar
+TODO fix bug when entering password that doesnt match and resubmitting password that does match - doesn't work
 
 
 

@@ -25,7 +25,7 @@
                            aria-haspopup="true" aria-expanded="false">{{ auth.user.name }}
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">change password</a></li>
+                            <li><a href="{{ path_for('auth.password.change') }}">change password</a></li>
                             <li><a href="{{ path_for('auth.signout') }}">sign out</a></li>
                         </ul>
                     </li>
