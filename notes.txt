@@ -1,18 +1,3 @@
-notes
-
---------------------------------------------------------------------------------------------------
-TODO fix bug when entering password that doesnt match and resubmitting password that does match - doesn't work
-
-
-
-
-
-
-
-
-
-
-
 --------------------------------------------------------------------------------------------------
 database
 --------------------------------------------------------------------------------------------------
@@ -30,21 +15,13 @@ CREATE TABLE `users` (
 --------------------------------------------------------------------------------------------------
 packages
 --------------------------------------------------------------------------------------------------
-https://github.com/illuminate/database
-https://github.com/Respect/Validation
-        slim/slim
-        slim/twig-view
-        slim/Slim-csrf
-        slim/flash
-
-
-
-
-
-
-
-
-
+https://github.com/
+    illuminate/database
+    Respect/Validation
+    slim/slim
+    slim/twig-view
+    slim/Slim-csrf
+    slim/flash
 
 --------------------------------------------------------------------------------------------------
 autoload file
@@ -79,57 +56,15 @@ $app->add(new \App\Middleware\OldInputMiddleware($container));
 
 $app->add($container->csrf);
 
-
-
-
-
-
-
 this link explains things pretty well in the how to use section -
 https://github.com/slimphp/Slim-Csrf
-
-
---------------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------------
-
-
-
-
-
-
---------------------------------------------------------------------------------------------------
-
---------------------------------------------------------------------------------------------------
-
-
-
-
-
-
 
 --------------------------------------------------------------------------------------------------
 scratch
 --------------------------------------------------------------------------------------------------
 
+var_dump($request->getParams()); <-- returns what gets passed through
 
-        User::create([
+// research best way to attack this ..
 
-            'name' => 'test',
-            'email' => 'test@test.com',
-            'password' => 'test',
-
-        ]);
-
-        die();
-
-
-
-            public function postSignUp($request, $response){
-
-                var_dump($request->getParams()); <-- returns what gets passed through
-
-            }
-
-            // research best way to attack this ..
-            'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT, ['cost' => 10]),
+'password' => password_hash($request->getParam('password'), PASSWORD_DEFAULT, ['cost' => 10]),

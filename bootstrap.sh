@@ -138,15 +138,11 @@ mv composer.phar /usr/local/bin/composer
 # )
 # echo "${VHOST}" > /etc/apache2/sites-available/000-default.conf
 
-
-
-
 ####################
 # final, install composer and slim
 # cd /vagrant
 # composer require slim/slim "^3.0"
 # composer require slim/twig-view
-
 ####################
 # view logs
 # tail -f /var/log/apache2/error.log
